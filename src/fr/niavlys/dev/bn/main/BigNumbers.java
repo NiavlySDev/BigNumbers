@@ -53,6 +53,7 @@ public class BigNumbers {
 	public BigNumbers(double entier, String sign) {
 		this.entier = entier;
 		this.sign = sign;
+		this.number = (long) (entier*getMultipleBySign(this.sign));
 	}
 	public BigNumbers(int nb) {
 		this.sign = getSignByMultiple((long) nb);
