@@ -24,6 +24,7 @@ public class BigNumbers {
 		multiple.put("B", 1_000_000_000L);
 		multiple.put("T", 1_000_000_000_000L);
 		multiple.put("Q", 1_000_000_000_000_000L);
+		multiple.put("Qa", 1_000_000_000_000_000_000L);
 
 		signs = new ArrayList<>();
 		signs.add("");
@@ -32,6 +33,7 @@ public class BigNumbers {
 		signs.add("B");
 		signs.add("T");
 		signs.add("Q");
+		signs.add("Qa");
 	}
 
 	public static Long getMultipleBySign(String mult) {
@@ -51,17 +53,23 @@ public class BigNumbers {
 	}
 
 	public BigNumbers(double entier, String sign) {
+		init();
 		this.entier = entier;
 		this.sign = sign;
+		if(sign == null){
+			this.sign = "";
+		}
 		this.number = (long) (entier*getMultipleBySign(this.sign));
 	}
 	public BigNumbers(int nb) {
+		init();
 		this.sign = getSignByMultiple((long) nb);
 		this.entier = nb / (double) multiple.get(this.sign);
 		this.number = (long) nb;
 
 	}
 	public BigNumbers(long nb) {
+		init();
 		this.sign = getSignByMultiple(nb);
 		this.entier = nb / (double) multiple.get(this.sign);
 		this.number = (long) nb;
