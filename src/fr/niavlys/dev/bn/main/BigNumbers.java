@@ -10,10 +10,10 @@ public class BigNumbers {
 	private double entier;
 	private String sign;
 	private Long number;
-	
+
 	private static HashMap<String, Long> multiple;
 	private static List<String> signs;
-	
+
 	private static final DecimalFormat DECIMAL_FORMAT = new DecimalFormat("#.##");
 
 	public static void init() {
@@ -33,7 +33,7 @@ public class BigNumbers {
 		signs.add("T");
 		signs.add("Q");
 	}
-	
+
 	public static Long getMultipleBySign(String mult) {
 		return multiple.get(mult);
 	}
@@ -49,7 +49,7 @@ public class BigNumbers {
 		}
 		return null;
 	}
-	
+
 	public BigNumbers(double entier, String sign) {
 		this.entier = entier;
 		this.sign = sign;
@@ -75,7 +75,7 @@ public class BigNumbers {
 	public Long getNumber() {
 		return number;
 	}
-	
+
 	private void recalculate() {
 		BigNumbers nb = new BigNumbers(this.number);
 		this.number = nb.getNumber();
@@ -114,12 +114,16 @@ public class BigNumbers {
 		this.sign = nb.getSign();
 		recalculate();
 	}
-	
+
+	public static List<String> getSigns() {
+		return signs;
+	}
+
 	public long toEntier() {
 		return number;
 	}
 	@Override
 	public String toString() {
-	    return DECIMAL_FORMAT.format(this.entier) + " " + this.sign;
+		return DECIMAL_FORMAT.format(this.entier) + " " + this.sign;
 	}
 }
