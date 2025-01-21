@@ -124,6 +124,31 @@ public class BigNumbers {
 		recalculate();
 	}
 
+	public void multiply(Integer nb) {
+		this.number *= nb;
+		recalculate();
+	}
+	public void multiply(Long nb) {
+		this.number *= nb;
+		recalculate();
+	}
+	public void multiply(BigNumbers nb) {
+		this.number *= nb.getNumber();
+		recalculate();
+	}
+
+	public void divide(Integer nb) {
+		this.number /= nb;
+		recalculate();
+	}
+	public void divide(Long nb) {
+		this.number /= nb;
+		recalculate();
+	}
+	public void divide(BigNumbers nb) {
+		this.number /= nb.getNumber();
+	}
+
 	public static List<String> getSigns() {
 		return signs;
 	}
@@ -134,5 +159,17 @@ public class BigNumbers {
 	@Override
 	public String toString() {
 		return DECIMAL_FORMAT.format(this.entier) + " " + this.sign;
+	}
+
+	public boolean superieur(BigNumbers nb) {
+		return this.number > nb.getNumber();
+	}
+
+	public boolean inferieur(BigNumbers nb) {
+		return !superieur(nb);
+	}
+
+	public boolean equals(BigNumbers nb) {
+		return (!superieur(nb)) && (!inferieur(nb));
 	}
 }
