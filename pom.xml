@@ -5,7 +5,7 @@
 
     <groupId>com.github.NiavlySDev</groupId>
     <artifactId>BigNumbers</artifactId>
-    <version>1.0.0</version>
+    <version>1.4</version>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
