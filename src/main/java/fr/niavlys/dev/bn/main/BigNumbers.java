@@ -246,6 +246,51 @@ public class BigNumbers {
 	}
 
 	/**
+	 * Add, remove or set a number to the current number based on the action (Integer version)
+	 * @param nb The number to add, remove or set (Integer)
+	 * @param addor The action to perform ("add", "remove", "set")
+	 */
+	public void addor(Integer nb, String addor){
+		if(addor.equalsIgnoreCase("add")){
+			add(nb);
+		} else if(addor.equalsIgnoreCase("remove")){
+			remove(nb);
+		} else if(addor.equalsIgnoreCase("set")){
+			set(nb);
+		}
+	}
+
+	/**
+	 * Add, remove or set a number to the current number based on the action (Long version)
+	 * @param nb The number to add, remove or set (Long)
+	 * @param addor The action to perform ("add", "remove", "set")
+	 */
+	public void addor(Long nb, String addor){
+		if(addor.equalsIgnoreCase("add")){
+			add(nb);
+		} else if(addor.equalsIgnoreCase("remove")){
+			remove(nb);
+		} else if(addor.equalsIgnoreCase("set")){
+			set(nb);
+		}
+	}
+
+	/**
+	 * Add, remove or set a number to the current number based on the action (BigNumbers version)
+	 * @param nb The number to add, remove or set (BigNumbers)
+	 * @param addor The action to perform ("add", "remove", "set")
+	 */
+	public void addor(BigNumbers nb, String addor){
+		if(addor.equalsIgnoreCase("add")){
+			add(nb);
+		} else if(addor.equalsIgnoreCase("remove")){
+			remove(nb);
+		} else if(addor.equalsIgnoreCase("set")){
+			set(nb);
+		}
+	}
+
+	/**
 	 * Multiply the current number by a number (Integer version)
 	 * @param nb The number to multiply by (Integer)
 	 */
