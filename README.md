@@ -23,7 +23,7 @@ Projet concu pour gérer les très grands nombres en Java.
    ```xml
       <dependency>
          <groupId>com.github.NiavlySDev</groupId>
-         <artifactId>ConfigDataManager</artifactId>
+         <artifactId>BigNumbers</artifactId>
          <version>[Tag] (Exemple: v1.3)</version>
       </dependency>
    ```
